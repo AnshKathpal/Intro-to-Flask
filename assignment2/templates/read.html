@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+    <style>
+        .nav{
+            display: flex;
+            border: 1px solid black;
+            width : 100%;
+            height : 10vh;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .datatable{
+            border : 2px solid black;
+            width : 40%;
+            height: 20vh;
+        }
+
+        .flex{
+            width : 90%;
+            border: 1px solid blue;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .datatable th {
+            border: 1px dotted black;
+        }
+        .datatable td {
+            border: 1px dotted black;
+            text-align: center;
+        }
+
+        .container{
+            width : 100%;
+            height : 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="/read">View Data</a>
+        <a href="/create">Create Entry</a>
+        <a href="/update">Update Entry</a>
+        <a href="/delete">Delete Entry</a>
+       </div>
+       <div class="container">
+           <h1>Data</h1>
+           <table class = "datatable" >
+               <tr  >
+                   <th>Key</th>
+                   <th>Value</th>
+               </tr>
+               {% for key, value in data.items() %}
+               <tr>
+                   <td>{{ key }}</td>
+                   <td>{{ value }}</td>
+               </tr>
+               {% endfor %}
+           </table>
+       </div>
+</body>
+</html>
